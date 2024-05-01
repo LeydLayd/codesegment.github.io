@@ -5,7 +5,7 @@
     <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Inicio de secion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -26,7 +26,7 @@
 
         form {
             display: block;
-            margin-top: 0em;
+            margin-top: 10em;
             unicode-bidi: isolate;
         }
 
@@ -66,10 +66,6 @@
 
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
-        }
-
-        .logo{
-            text-align: center;
         }
     </style>
 
@@ -136,39 +132,21 @@
     </div>
     <main class="form-signin w-100 m-auto">
         <form>
-            <div class="logo">
-            <img src="../../Utl/Logo.png" alt="" width="100" height="100"/>
-            </div>
-            <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+            <!--img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"-->
+            <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputNombre" placeholder="Nombre">
-                <label for="floatingInputNombre">Nombre</label>
+                <input type="email" class="form-control" id="floatingInput" placeholder="usuario@gmail.com">
+                <label for="floatingInput">Direccion de correo</label>
             </div>
-
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputApellidos" placeholder="Apellidos">
-                <label for="floatingInputApellidos">Apellidos</label>
-            </div>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputCorreo" placeholder="usuario@gmail.com">
-                <label for="floatingInputCorreo">Direccion de correo</label>
-            </div>
-
             <div class="form-floating">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
                 <label for="floatingPassword">Contraseña</label>
             </div>
 
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar Contraseña">
-                <label for="floatingConfirmPassword">Confirmar Contraseña</label>
-            </div>
-
             <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Iniciar sesión</button>
             <div class="fw-normal mt-3">
-                <p class="mb-0">¿YA tienes una cuenta? <a href="Log">Inicia sesion</a></p>
+                <p class="mb-0">¿No tienes una cuenta? <a href="Sign">Registrarse</a></p>
             </div>
             <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2024</p>
         </form>
