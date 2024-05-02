@@ -67,6 +67,10 @@
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
+        
+        .logo{
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -132,7 +136,9 @@
     </div>
     <main class="form-signin w-100 m-auto">
         <form>
-            <!--img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"-->
+            <div class="logo">
+                <img src="../../Utl/Logo.png" alt="" width="100" height="100" />
+            </div>
             <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
 
             <div class="form-floating">
