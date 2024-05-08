@@ -39,8 +39,8 @@
 </head>
 
 <body>
-    <?php echo $this->include('Login/theme');?>
-    
+    <?php echo $this->include('Login/theme'); ?>
+
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
@@ -64,8 +64,18 @@
             </ul>
 
             <div class="col-md-3 text-end">
-                <button onclick="location.href='Login/Sign'" type="button" class="btn btn-outline-primary me-2">Registrarse</button>
-                <button type="button" onclick="location.href='Login/Log'" class="btn btn-primary">Ingresar</button>
+               <?php 
+               $sesion = true;
+               if ($sesion) {
+                echo $this->include('Utileria/ButtonRegister');
+               }
+               else {
+                echo $this->include('Utileria/Drop');
+               }
+               ?>
+            </div>
+            <div>
+                
             </div>
         </header>
     </div>
