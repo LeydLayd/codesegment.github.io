@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UsuariosModel extends Model{
+class UserModel extends Model{
     protected $table      = 'usuarios';
     protected $primaryKey = 'id';
 
@@ -15,12 +15,5 @@ class UsuariosModel extends Model{
     protected $allowedFields = ['Nombre_usuario', 'Correo_electronico','Contraseña'];
 
     protected bool $allowEmptyInserts = false;
-
-    public function obtenerUsuarioPorCredenciales($nombreUsuario, $contrasena)
-    { 
-        return $this->where('Nombre_usuario', $nombreUsuario)
-                    ->where('Contrasena', $contrasena)
-                    ->first();
-    }
 
 }

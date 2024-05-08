@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\UsuariosModel;
+use App\Models\UserModel;
 
 class Login extends BaseController{
     public function Log(): string
@@ -23,7 +23,7 @@ class Login extends BaseController{
             'Apellidos' => 'required|max_length[30]',
             'Correo' => 'required|max_length[254]|valid_email',
             'Password' => 'required|max_length[255]|min_length[10]',
-            'ConfirmPassword' => 'required|max_length[255]|matches[password]',
+            'ConfirmPassword' => 'required|max_length[255]|matches[Password]',
         ];
 
         
@@ -33,9 +33,9 @@ class Login extends BaseController{
         }
 
         $nombre = $this->request->getPost("Nombre");
-        $apellidos = $this->request->getPost("Nombre");
-        $correo = $this->request->getPost("Nombre");
-        $pasword = $this->request->getPost("Nombre");
+        $apellidos = $this->request->getPost("Apellidos");
+        $correo = $this->request->getPost("Correo");
+        $pasword = $this->request->getPost("Password");
 
         $completo = $nombre." ". $apellidos;
 
@@ -45,7 +45,7 @@ class Login extends BaseController{
             'Contrasena' => $pasword
         ];
 
-        $usuario = new UsuariosModel();
+        $usuario = new UserModel();
 
         echo $usuario->insert($data);
     }
@@ -55,10 +55,10 @@ class Login extends BaseController{
         $nombreUsuario = $this->request->getPost('Input');
         $contrasena = $this->request->getPost('Password');
 
-        $usuario = new UsuariosModel();
+        $usuario = new UserModel();
 
-        $usuario->where('nombre_de_usuario', $nombreUsuario)
-        ->where('contrasena', $contrasena)
+        $usuario->where('Correo_electronico', $nombreUsuario)
+        ->where('Contrasena', $contrasena)
         ->first();
         
         if ($usuario !== null) {
