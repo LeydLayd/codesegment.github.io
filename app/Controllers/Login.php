@@ -16,7 +16,6 @@ class Login extends BaseController{
     }
 
     public function Registered(){
-        print_r($_POST);
 
         $reglas = [
             'Nombre' => 'required|max_length[30]',
@@ -42,12 +41,17 @@ class Login extends BaseController{
         $data = [
             'Nombre_usuario' => $completo,
             'Correo_electronico' => $correo,
-            'Contrasena' => $pasword
+            'Password' => $pasword
         ];
 
         $usuario = new UserModel();
 
-        echo $usuario->insert($data);
+        $setion = $usuario->insert($data);
+
+        if ($setion !== null){
+            session()->setFlashdata('Usuario',$data);
+            return redirect()->to(base_url('/'));
+        }
     }
 
     public function Logear(){
@@ -57,16 +61,14 @@ class Login extends BaseController{
 
         $usuario = new UserModel();
 
-        $usuario->where('Correo_electronico', $nombreUsuario)
-        ->where('Contrasena', $contrasena)
+        $user = $usuario->where('Correo_electronico', $nombreUsuario)
+        ->where('Password', $contrasena)
         ->first();
         
-        if ($usuario !== null) {
-            echo 'Credenciales válidas. Usuario autenticado.';
-            // Aquí puedes hacer algo con los datos del usuario, por ejemplo:
-            //echo 'Nombre: ' . $usuario['nombre'];
-            //echo 'Email: ' . $usuario['email'];
-            // Y así sucesivamente con los demás campos del usuario
+        if ($user !== null) {
+            session()->setFlashdata('Usuario',$user);
+            return redirect()->to(base_url('/'));
+          
         } else {
             echo 'Credenciales inválidas. Usuario no autenticado.';
         }

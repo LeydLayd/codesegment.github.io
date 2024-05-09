@@ -112,7 +112,7 @@
                 <label for="floatingConfirmPassword">Confirmar Contraseña</label>
             </div>
 
-            <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Iniciar sesión</button>
+            <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Registrarse</button>
             <div class="fw-normal mt-3">
                 <p class="mb-0">¿YA tienes una cuenta? <a href="Log">Inicia sesion</a></p>
             </div>

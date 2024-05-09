@@ -65,17 +65,14 @@
 
             <div class="col-md-3 text-end">
                <?php 
-               $sesion = true;
-               if ($sesion) {
-                echo $this->include('Utileria/ButtonRegister');
+               $user = session()->getFlashdata('Usuario');
+               if ($user !== null) {
+                echo $this->include('Utileria/Drop', $user);
                }
                else {
-                echo $this->include('Utileria/Drop');
+                echo $this->include('Utileria/ButtonRegister');
                }
                ?>
-            </div>
-            <div>
-                
             </div>
         </header>
     </div>
