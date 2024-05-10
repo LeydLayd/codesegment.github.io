@@ -64,18 +64,18 @@
             </ul>
 
             <div class="col-md-3 text-end">
-               <?php 
-               $user = session()->getFlashdata('Usuario');
-               if ($user !== null) {
-                echo $this->include('Utileria/Drop', $user);
-               }
-               else {
-                echo $this->include('Utileria/ButtonRegister');
-               }
-               ?>
+                <?php
+                $user = session()->getFlashdata('Usuario');
+                if ($user !== null) {
+                    echo $this->include('Utileria/Drop', $user);
+                } else {
+                    echo $this->include('Utileria/ButtonRegister');
+                }
+                ?>
             </div>
+
+
         </header>
-    </div>
 </body>
 
 </html>

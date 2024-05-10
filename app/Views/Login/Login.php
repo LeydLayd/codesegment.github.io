@@ -79,6 +79,8 @@
     <?php echo $this->include('Login/theme');?>
 
     <main class="form-signin w-100 m-auto">
+    <?php helper('form');
+        echo validation_list_errors() ?>
         <form action="<?php echo base_url('Login/Logear') ?>" method="post" autocomplete="off">
             <div class="logo">
                 <img src="../../Utl/Logo.png" alt="" width="100" height="100" />
