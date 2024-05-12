@@ -5,7 +5,7 @@
     <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Validation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -26,7 +26,7 @@
 
         form {
             display: block;
-            margin-top: 0em;
+            margin-top: 10em;
             unicode-bidi: isolate;
         }
 
@@ -79,46 +79,44 @@
     <?php echo $this->include('Login/theme'); ?>
 
     <main class="form-signin w-100 m-auto">
-        <?php helper('form');
-        echo validation_list_errors() ?>
-        <form action="<?php echo base_url('Login/Registered') ?>" method="post" autocomplete="off">
+        <form action="<?php echo base_url('Login/Logear') ?>" method="post" autocomplete="off">
             <div class="logo">
                 <img src="../../Utl/Logo.png" alt="" width="100" height="100" />
             </div>
-            <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+            <h1 class="h1 mb-3 fw-normal">Validacion de email</h1>
+            <h3 class="h3 mb-3 fw-normal">Ingresa el codigo que enviamos su correo</h3>
 
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputNombre" name="Nombre" placeholder="Nombre" value="<?php echo set_value('Nombre'); ?>">
-                <label for="floatingInputNombre">Nombre</label>
+                <input type="text" class="form-control" id="floatingInput" name="Input" placeholder="1234">
+                <label for="floatingInput">Codigo ej:1234</label>
             </div>
 
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInputApellidos" name="Apellidos" placeholder="Apellidos" value="<?php echo set_value('Apellidos'); ?>">
-                <label for="floatingInputApellidos">Apellidos</label>
-            </div>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInputCorreo" name="Correo" placeholder="usuario@gmail.com" value="<?php echo set_value('Correo'); ?>">
-                <label for="floatingInputCorreo">Direccion de correo</label>
-            </div>
-
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Contraseña" value="<?php echo set_value('Password'); ?>">
-                <label for="floatingPassword">Contraseña</label>
-            </div>
-
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingConfirmPassword" name="ConfirmPassword" placeholder="Confirmar Contraseña" value="<?php echo set_value('ConfirmPassword'); ?>">
-                <label for="floatingConfirmPassword">Confirmar Contraseña</label>
-            </div>
-
-            <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Registrarse</button>
-            <div class="fw-normal mt-3">
-                <p class="mb-0">¿YA tienes una cuenta? <a href="Log">Inicia sesion</a></p>
-            </div>
+            <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Verificar</button>
+            <button class="btn btn-info w-100 py-2 mt-3" type="submit" id="submitButton" disabled>Enviar codigo nuevo</button>
+            <p id="counter"></p> 
             <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2024</p>
         </form>
     </main>
+    <script>
+        var tiempoRestante = 90;
+
+        function actualizarContador() {
+            var minutos = Math.floor(tiempoRestante / 60);
+            var segundos = tiempoRestante % 60;
+            document.getElementById("counter").textContent = "Enviar nuevo codigo en " + minutos + " min " + segundos + " seg";
+            if (tiempoRestante > 0) {
+                tiempoRestante--;
+                setTimeout(actualizarContador, 1000); 
+            } else {
+                document.getElementById("submitButton").disabled = false;
+                document.getElementById("counter").textContent = ""; 
+            }
+        }
+
+        // Iniciar el contador
+        actualizarContador();
+    </script>
+
 </body>
 
 </html>

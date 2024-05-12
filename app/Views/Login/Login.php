@@ -88,11 +88,11 @@
             <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" name="Input" placeholder="usuario@gmail.com">
+                <input type="email" class="form-control" id="floatingInput" name="Input" placeholder="usuario@gmail.com" value="<?php echo set_value('Input'); ?>">
                 <label for="floatingInput">Direccion de correo</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Contraseña">
+                <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Contraseña" value="<?php echo set_value('Password'); ?>">
                 <label for="floatingPassword">Contraseña</label>
             </div>
 
