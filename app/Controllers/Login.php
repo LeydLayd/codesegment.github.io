@@ -72,38 +72,48 @@ class Login extends BaseController
         $completo = $nombre . " " . $apellidos;
         $correo = trim($temp);
 
-        //return view('Login\Validation');
+        $data = [
+            'Nombre_usuario' => $completo,
+            'Correo_electronico' => $correo,
+            'Password' => $pasword
+        ];
 
-        //$this->ValidateEmail($correo);
-
-        $key = $this->ValidateEmail($correo);
-
-        if ($key) {
-
-            $data = [
-                'Nombre_usuario' => $completo,
-                'Correo_electronico' => $correo,
-                'Password' => $pasword
-            ];
-
-            $usuario = new UserModel();
-
-            $User = $usuario->insert($data);
-
-            if ($User !== null) {
-                $data['ID_usuario'] = $User;
-                $this->session->set($data);
-                return redirect()->to(base_url('/'));
-            }
-        }
+        $this->session->set($data);
+        $this->ValidateEmail();
     }
 
-    public function ValidateEmail($email)
+    public function ValidateEmail()
     {
+        $key = str_pad(rand(0, 9999), 4, '0', STR_PAD_LEFT);
 
-        echo view('Login\Validation');
+        $this->session->setFlashdata('Key',$key);
 
-        return true;
+        $email = \Config\Services::email();
+
+        $email->setFrom('rojasdiego035@gmail.com', 'Code Segment');
+        $email->setTo($this->session->get('Correo_electronico'));
+        $email->setSubject('Clave de acceso');
+
+        $email->setMessage("<h1>Tu clave de acceso es: <strong>$key</strong></h1>");
+
+        $email->send();
+
+        return view('Login\Validation');
+    }
+
+    public function save(){
+        $SentKey = $this->session->getFlashdata('Key');
+
+        $EnKey = $this->request->getPost('Input');
+
+        if ($SentKey == $EnKey){
+            $usuario = new UserModel();
+            
+
+        }
+        else{
+
+        }
     }
 
     public function Logear()

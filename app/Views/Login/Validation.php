@@ -79,7 +79,7 @@
     <?php echo $this->include('Login/theme'); ?>
 
     <main class="form-signin w-100 m-auto">
-        <form action="<?php echo base_url('Login/Logear') ?>" method="post" autocomplete="off">
+        <form action="<?php echo base_url('Login/ValidateEmail') ?>" method="post" autocomplete="off">
             <div class="logo">
                 <img src="../../Utl/Logo.png" alt="" width="100" height="100" />
             </div>
