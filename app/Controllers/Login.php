@@ -18,6 +18,10 @@ class Login extends BaseController
 
     public function Registered()
     {
+        $ss = $this->session->get('Nombre_usuario');
+        if ($ss !== null){
+            $this->session->destroy(); 
+        }
 
         $reglas = [
             'Nombre' => [
@@ -80,6 +84,7 @@ class Login extends BaseController
 
         $this->session->set($data);
         $this->ValidateEmail();
+        //return view('Login\Validation');
     }
 
     public function ValidateEmail()
@@ -91,14 +96,16 @@ class Login extends BaseController
         $email = \Config\Services::email();
 
         $email->setFrom('rojasdiego035@gmail.com', 'Code Segment');
-        $email->setTo($this->session->get('Correo_electronico'));
+
+        $correo = $this->session->get('Correo_electronico');
+        $email->setTo($correo);
         $email->setSubject('Clave de acceso');
 
         $email->setMessage("<h1>Tu clave de acceso es: <strong>$key</strong></h1>");
 
         $email->send();
 
-        return view('Login\Validation');
+        echo view('Login\Validation');
     }
 
     public function save(){
@@ -108,11 +115,19 @@ class Login extends BaseController
 
         if ($SentKey == $EnKey){
             $usuario = new UserModel();
-            
+            $data = [
+                'Nombre_usuario' => $this->session->get('Nombre_usuario'),
+                'Correo_electronico' => $this->session->get('Correo_electronico'),
+                'Password' => $this->session->get('Password')
+            ];
 
+            $id = $usuario->insert($data);
+            $this->session->set('ID_usuario',$id);
+            return redirect()->to(base_url('/'));
         }
         else{
-
+            $this->session->setFlashdata('Message','Codigo no valido, intenta de nuevo o revisa que sea correcto tu correo');
+            return view('Login\Validation');
         }
     }
 
