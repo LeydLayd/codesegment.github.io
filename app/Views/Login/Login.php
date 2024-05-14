@@ -1,7 +1,5 @@
     <?php echo $this->include('plantillas/header-login'); ?>
 
-    <?php echo $this->include('plantillas/theme');?>
-
     <main class="form-signin w-100 m-auto">
     <?php helper('form');
         echo validation_list_errors() ?>

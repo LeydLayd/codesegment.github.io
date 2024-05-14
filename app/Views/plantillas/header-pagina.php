@@ -122,3 +122,5 @@
             </div>  
         </header>
     </div>
+
+    <?php echo $this->include('plantillas/theme') ?>

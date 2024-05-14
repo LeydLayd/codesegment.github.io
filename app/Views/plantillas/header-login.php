@@ -77,3 +77,5 @@
 </head>
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+<?php echo $this->include('plantillas/theme');?>
