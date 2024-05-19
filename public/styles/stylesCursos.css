@@ -1,0 +1,239 @@
+.btn-bd-primary {
+    --bd-violet-bg: #011bff;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #1830bb;
+    --bs-btn-hover-border-color: #1830bb;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #1830bb;
+    --bs-btn-active-border-color: #1830bb;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+ /*Carrusel */
+ .margen_arriba{
+    margin-top: 4%;
+}
+.d-item{
+    /*margin-top: 10%;*/
+    height: 400px;
+}
+
+.d-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.d-img2{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+}
+
+/* Estilo para Carrusel */
+.white_color{
+    color:white;
+}
+
+/* Menu de cursos */
+#portfolio {
+padding: 0 0 120px 0;
+}
+
+.categories {
+    padding-top:30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+ul, ol {
+    padding: 0;
+    webkit-padding: 0;
+    moz-padding: 0;
+}
+
+ul.cat li {
+    display: inline-block;
+}
+
+ol.type li {
+display: inline-block;
+margin: 0 10px;
+padding: 20px 0;
+}
+ol.type li a {
+color: #fff;
+font-weight: 500;
+font-size: 14px;
+padding: 12px 24px;
+background: #9c65a5;
+border: 0;
+border-radius: 0;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+ol.type li a.active {
+color: #fff;
+background-color: #4054c6;
+}
+
+ol.type li a:hover {
+color: #fff;
+background-color: #4054c6;
+}
+
+.clearfix {
+display: block;
+}
+
+/*Testimonios*/
+.page_section {
+padding-top: 1px;
+padding-bottom: 10px;
+background: linear-gradient(to bottom, #5568cd, #7365b7, #7d69c7, #9b69bc);
+}
+.section_title h1 {
+display: block;
+color: #1a1a1a;
+font-weight: 500;
+padding-top: 20px;
+}
+
+.section_title h1::before {
+margin-top: 48%;
+display: block;
+position: absolute;
+top: 0;
+left: 50%;
+-webkit-transform: translateX(-50%);
+-moz-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+-o-transform: translateX(-50%);
+transform: translateX(-50%);
+width: 150px;
+height: 4px;
+content: '';
+background: #a76ab7;
+}
+
+.testimonios_cajas{
+margin: 5px;
+}
+
+.testimonio_caja{
+margin-bottom: 30px;
+margin-top: 0rem;
+}
+
+.card{
+display: block;
+background: #f8f9fb;
+border: none;
+}
+
+.card-img-top{
+border-top-left-radius: 0px;
+border-top-right-radius: 0px;
+width: 17.8rem;
+height: 16rem;
+}
+
+.card-body{
+padding-top: 0px;
+padding-bottom: 15px;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+.card-title{
+margin-top: 10px;
+font-weight: bold;
+}
+
+.card-text{
+font-size: 13px;
+margin-bottom: 50rem;
+}
+
+/* Estilo para Testimonios */
+.black_color{
+color:black;
+}
+/* Fin de Testimonios */
+
+
+.container-footer{
+max-width: 1200px;
+margin: 0 auto;
+font-family: sans-serif;
+list-style: none;
+}
+
+.footer{
+background: #5864d4;
+/*  background: #6a69cc;*/
+padding-top: 50px;
+padding-bottom: 50px;
+padding-left: 55px;
+}
+
+.footer-row{
+display: flex;
+flex-wrap: wrap;
+}
+
+.footer-links{
+width: 25%;
+padding: 0 15px;
+}
+
+.footer-links h4{
+font-size: 20px;
+color: white; 
+margin-bottom: 25px;
+font-weight: 700;
+border-bottom: 5px solid #c7abce;
+padding-bottom: 13px;
+display: inline-block;
+}
+
+.footer-links ul li a{
+font-size: 18px;
+text-decoration: none;
+color: white;
+display: block;
+margin-bottom: 15px;
+transition: all .3s ease;
+}
+
+.footer-links ul li a:hover{
+color: #e5dbe9;
+padding-left: 6px;  
+}
+
+.social-link a{
+display: inline-block;
+min-height: 40px;
+width: 40px;
+background-color:  rgba(255, 255, 255, 0.2);
+margin: 0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: white; 
+transition: all .5s ease;
+}

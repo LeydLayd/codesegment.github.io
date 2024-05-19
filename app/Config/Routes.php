@@ -15,6 +15,13 @@ $routes->get('/noticias', 'Controller::noticias');
 
 $routes->get('/cursos', 'Controller::cursos');
 
+/* Noticias */
+
+$routes->get('/noticias', 'Controller::noti1');
+
+$routes->get('/noticias', 'Controller::noti2');
+
+$routes->get('/noticias', 'Controller::noti3');
 
 /* Controlador Login */
 $routes->get('/Login', 'Logins::Log');

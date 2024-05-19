@@ -43,4 +43,21 @@ class Controller extends BaseController
 
         return view('cursos/inicio-cursos', $data);
     }
+
+    //Noticias
+    
+    public function noti1(): string
+    {
+        return view('noticias/noti1');
+    }
+
+    public function noti2(): string
+    {
+        return view('noticias/noti2');
+    }
+
+    public function noti3(): string
+    {
+        return view('noticias/noti3');
+    }
 }
