@@ -11,7 +11,6 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <article class="mb-4">
-                    <img src="path/to/your/image.jpg" class="img-fluid rounded mb-4" alt="Imagen de Actualizaciones en Programación">
                     <p class="lead">Estamos emocionados de presentarte las recientes actualizaciones en nuestros cursos de programación. Nuestro objetivo es proporcionarte las herramientas y conocimientos necesarios para destacarte en el mundo de la programación, desde principiantes hasta avanzados.</p>
                     <h3>Nuevas Características y Recursos</h3>
                     <p>Hemos integrado varias mejoras significativas:</p>

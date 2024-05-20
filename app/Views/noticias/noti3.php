@@ -10,7 +10,6 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <article class="mb-4">
-                    <img src="path/to/your/image.jpg" class="img-fluid rounded mb-4" alt="Imagen de Noticias en Circuitos">
                     <p class="lead">Explora las últimas noticias y desarrollos en el campo de los circuitos y la electrónica. En CodeSegment, estamos comprometidos a mantenerte al tanto de las innovaciones que impulsan la tecnología actual.</p>
                     <h3>Avances Recientes</h3>
                     <p>Los avances más recientes incluyen:</p>
